@@ -6,5 +6,13 @@ pipeline {
                 sh 'echo "Hello world!"'
             }
         }
+        stage('Deploy') {
+            when {
+                branch main
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
     }
 }
